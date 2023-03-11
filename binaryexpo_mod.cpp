@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std ;
 #define ll long long 
-#define mod 13
+#define mod 100000007
 ll binexpomod(ll a, ll b) {
 		long res = 1;
 		a %= mod;
