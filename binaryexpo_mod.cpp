@@ -2,8 +2,8 @@
 #include<bits/stdc++.h>
 using namespace std ;
 #define ll long long 
-#define mod 100000007
-ll binexpomod(ll a, ll b) {
+// #define mod 100000007
+ll binexpomod(ll a, ll b, ll mod) {
 		long res = 1;
 		a %= mod;
 		while (b != 0) {
@@ -17,6 +17,7 @@ ll binexpomod(ll a, ll b) {
 
 int main(){
     // (ab) mod p = ( (a mod p) (b mod p) ) mod p
-    ll ok = binexpomod(2 ,5 ) ; 
+	ll mod = 100000007;
+    ll ok = binexpomod(2 ,5 ,mod ) ; 
     cout<<ok <<endl; 
 }
