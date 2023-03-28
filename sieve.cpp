@@ -21,4 +21,4 @@ void sieve(int n)
 
 //take o(nloglogn) 
 //to check the n is prime or not 
-// if(n % 2 == 1 && Primes[n / 2] == 0) cout<<n<<endl; 
+// if(n % 2 == 1 && Primes[n / 2] == 0 ||n==2) cout<<n<<endl; 
