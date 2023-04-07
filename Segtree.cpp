@@ -41,14 +41,12 @@ struct Lsegtree{
         lazy.assign(4*n, identity_update);
     }
 //---------------------------------------------------------------------------------------------
-// change these function 
+// change these function, use identity_element here 
     T combine(T l, T r){
         // change this function as required.
         T ans = (l + r);
         return ans;
     }
-
-    // change the following 2 functions, and you're more or less done.
     T apply(T curr, U upd, ll tl, ll tr){
         T ans = (tr-tl+1)*upd;
         // increment range by upd:
@@ -56,7 +54,7 @@ struct Lsegtree{
 
         return ans;
     }
-
+    //apply identity_update in here 
     U combineUpdate(U old_upd, U new_upd, ll tl, ll tr){
         U ans = old_upd;
         ans=new_upd;
