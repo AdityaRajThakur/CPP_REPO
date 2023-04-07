@@ -29,7 +29,7 @@ struct Lsegtree{
         Definition of identity_element: the element I such that combine(x,I) = x
         for all x
 
-        Definition of identity_update: the element I such that apply(x,I) = x
+        Definition of identity_update: the element I such that apply(I,x) = x
         for all x        
     */
 
@@ -40,8 +40,6 @@ struct Lsegtree{
         st.assign(4*n,identity_element);
         lazy.assign(4*n, identity_update);
     }
-
-
 //---------------------------------------------------------------------------------------------
 // change these function 
     T combine(T l, T r){
@@ -75,11 +73,6 @@ struct Lsegtree{
         buildUtil(2*v + 2,tm+1,tr,a);
         st[v] = combine(st[2*v + 1], st[2*v + 2]);
     }
-
-
-
-
-
     void push_down(ll v, ll tl, ll tr){
         //for the below line to work, make sure the "==" operator is defined for U.
         if(lazy[v] == identity_update)return;
@@ -103,7 +96,6 @@ struct Lsegtree{
         ll tm = (tl + tr)>>1;
         return combine(queryUtil(2*v+1,tl,tm,l,r), queryUtil(2*v+2,tm+1,tr,l,r));
     }
- 
     void updateUtil(ll v, ll tl, ll tr, ll l, ll r, U upd){
         push_down(v,tl,tr); 
         if(tr < l or tl > r)return;
@@ -118,9 +110,6 @@ struct Lsegtree{
             st[v] = combine(st[2*v + 1], st[2*v+2]);
         }
     }
-
-
-
     void build(vector<T>a){
         assert( (ll)a.size() == n);
         buildUtil(0,0,n-1,a);
