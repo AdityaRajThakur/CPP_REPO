@@ -4,6 +4,8 @@ using namespace std ;
 
 #define SIZE 200005
 struct DSU{
+    //parent: This array will store the parent of each element in the disjoint sets.
+    //rank: This array will store the rank (or size) of each set.
     int parent[SIZE] , rank[SIZE] ; 
     void cst(int n ){
         for(int i = 0 ; i<=n;i++){
