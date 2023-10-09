@@ -19,7 +19,7 @@ int main() {
 
     int parent[N];  //parent vector
     int key[N] = {INT_MAX} ;   // distance or key vector
-    bool mstSet[N] ; //MST vector 
+    bool mstSet[N] ; //MST vector
     for(int i = 0 ; i<N;i++){
         key[i] = INT_MAX ; 
         mstSet[i] = false ; 
@@ -50,9 +50,10 @@ int main() {
       //  adj1[parent[i]].push_back({i , key[i]});
     }
     //printing the MST 
+    cout<<"Edge"<<"  "<<"weight"<<endl; 
     for(int i = 0  ; i<N ;i++){
         for(auto u:adj1[i]){
-            cout<<i<<" " <<u.first<<" "<<u.second<<endl; 
+            cout<<u.first<<"->" <<i<<"    "<<u.second<<endl; 
         }
     }
     return 0 ; 

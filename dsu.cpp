@@ -13,7 +13,7 @@ struct DSU{
     }
     int f(int a){
         if(parent[a]==a) return a ; 
-        return parent[a] = f(parent[a]) ; 
+        return parent[a] = f(parent[a]);
     }
     void u(int a ,int b){
         int x = f(a); 

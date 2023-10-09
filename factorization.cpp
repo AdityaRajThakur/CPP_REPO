@@ -17,7 +17,6 @@ void factor(vector<int> &arr , int n){
 int main(){
     int n ; 
     cin>>n; 
-
     vector<int> fact ; 
     factor(fact , n) ; 
     for(auto x : fact){
